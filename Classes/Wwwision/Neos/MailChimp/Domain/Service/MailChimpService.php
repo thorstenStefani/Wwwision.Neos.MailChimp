@@ -26,6 +26,7 @@ class MailChimpService
      */
     private $requestEngine;
 
+
     /**
      * @var string
      */
