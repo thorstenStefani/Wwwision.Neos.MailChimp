@@ -20,6 +20,11 @@ Neos:
           'Wwwision.Neos.MailChimp:UniqueSubscription':
             implementationClassName: Wwwision\Neos\MailChimp\Validation\Validator\UniqueSubscriptionValidator
         formElementTypes:
+          'Wwwision.Neos.MailChimp:MailChimpInterests':
+            superTypes:
+              'Neos.Form:FormElement': TRUE
+            implementationClassName: 'Wwwision\Neos\MailChimp\Form\FormElements\MailChimpInterestsFormElement'
+        formElementTypes:
           'Neos.Form:Form':
             formBuilder:
               editors:

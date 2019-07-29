@@ -15,11 +15,11 @@ Usage
 -----
 
 Install this package and make sure to resolve all dependencies.
-The easiest way to install this package is to add
+The easiest way to install this package is to use [composer](https://getcomposer.org/) by adding
 ```json
-"wwwision/neos-mailchimp": "^4.0"
+"wwwision/neos-mailchimp": "^5.0"
 ```
-To your Site package (or whichever package that uses the module or service) and install it and its dependencies via `composer install`.
+to your Site package (or whichever package that uses the module or service) and install it and its dependencies via `composer install`.
 
 After successful installation make sure to configure the MailChimp® API key in the `Settings.yaml`of your Site package:
 
@@ -52,7 +52,6 @@ Form Finisher
 -------------
 
 This package also comes with a simple form finisher that allows for creation of simple Newsletter subscription forms using the *Flow Form Framework*.
-It also adds the corresponding *FormBuilder* configuration so that the finisher can be used directly in the visual editor.
 
 Alternatively you can save the following snippet to `Data/Forms/newsletter.yaml` to create a simple newsletter subscription form:
 
@@ -148,11 +147,17 @@ This package demonstrates...
 
 ...how to reuse Neos layouts and partials with [Views.yaml](http://flowframework.readthedocs.io/en/stable/TheDefinitiveGuide/PartIII/ModelViewController.html#configuring-views-through-views-yaml)
 
-...how to create & configure a form finishers so that it can be used in the FormBuilder
+...how to create & configure a form finishers so that it can be used in the Form definition
 
 ...how to make use of [Objects.yaml](http://flowframework.readthedocs.io/en/stable/TheDefinitiveGuide/PartIII/ObjectManagement.html#configuring-objects) to initialize custom API clients
 
 ...how to make arbitrary result sets countable and "paginatable" using a `CallbackQueryResult` object
+
+FAQ
+---
+
+* I get an error `No MailChimp lists found. Did you configure the API key correctly at Wwwision.Neos.MailChimp.apiKey?`, what's wrong with me?
+  * Make sure you have configured the API key in the Settings _and_ in the form finisher configuration as described above. If that's the case, make sure your Package dependency is correct. That means: The package that configures the API key must require the `wwwision/neos-mailchimp` package in the `composer.json` manifest. Otherwise the loading order is incorrect and the API key might be overridden by the default settings
 
 License
 -------
