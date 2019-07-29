@@ -24,7 +24,6 @@ Neos:
             superTypes:
               'Neos.Form:FormElement': TRUE
             implementationClassName: 'Wwwision\Neos\MailChimp\Form\FormElements\MailChimpInterestsFormElement'
-        formElementTypes:
           'Neos.Form:Form':
             formBuilder:
               editors:
